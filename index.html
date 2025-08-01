@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TrendyCart | Home</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -25,16 +27,31 @@
   </div>
 
   <ul class="nav-links" id="navLinks">
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Contact</a></li>
-    <li>
+    <li><a href="index.html" class="nav-link">Home</a></li>
+  <li><a href="blog.html" class="nav-link">Blog</a></li>
+  <li><a href="contact.html" class="nav-link">Contact</a></li>
+ <li class="dropdown">
   <a href="#">Shop ▼</a>
-  <ul>
-    <li><a href="#">Shirts</a></li>
-    <li><a href="#">Shoes</a></li>
+  <ul class="submenu">
+    <li class="dropdown-sub">
+      <a href="#">Mens ▸</a>
+      <ul class="submenu">
+        <li><a href="#">Shirts</a></li>
+        <li><a href="#">Pants</a></li>
+        <li><a href="#">Shoes</a></li>
+      </ul>
+    </li>
+    <li class="dropdown-sub">
+      <a href="#">Womens ▸</a>
+      <ul class="submenu">
+        <li><a href="#">Dresses</a></li>
+        <li><a href="#">Heels</a></li>
+        <li><a href="#">Bags</a></li>
+      </ul>
+    </li>
   </ul>
 </li>
+
 
     </li>
   </ul>
@@ -79,6 +96,14 @@
         <img src="images/bags.jpg" alt="Bags" />
         <span>Bags</span>
       </a>
+        <a href="products.html?category=bag" class="cat-item">
+        <img src="images/heels.jpg" alt="Heels" />
+        <span>Heels</span>
+      </a>
+        <a href="products.html?category=bag" class="cat-item">
+        <img src="images/dresses.jpg" alt="Dresses" />
+        <span>Dresses</span>
+      </a>
     </div>
   </section>
 
@@ -109,6 +134,7 @@
 
   <!-- Service Info Section with Iconify -->
   <section class="service-info">
+    <h2>Services</h2>
     <div class="service-container">
       <div class="service-box">
         <div class="service-icon">
@@ -229,12 +255,14 @@
     <div class="footer-section about">
       <h2>TrendyCart</h2>
       <p>Your one-stop destination for the latest fashion, accessories, and style trends. Shop with confidence and style!</p>
-      <div class="socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
+     <div class="socials">
+  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+  <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+</div>
+
     </div>
 
     <!-- Column 2 -->
@@ -259,6 +287,17 @@
     &copy; 2025 TrendyCart. All rights reserved. Designed & developed by TrendyDev.
   </div>
 </footer>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split("/").pop();
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
 
   <script>
 

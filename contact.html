@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | TrendyCart</title>
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <a href="index.html" class="logo-text">TrendyCart</a>
+
+  <div class="hamburger" id="hamburger">
+    &#9776;
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="blog.html" class="nav-link">Blog</a></li>
+    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+  </ul>
+
+  <div class="nav-icons">
+    <a href="#"><i class="fas fa-search"></i></a>
+    <a href="#"><i class="fas fa-heart"></i></a>
+    <a href="#"><i class="fas fa-user"></i></a>
+    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+  </div>
+</nav>
+
+<!-- Contact Section -->
+<section class="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Have a question or comment? We'd love to hear from you!</p>
+    <form action="contact_form.php" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h2>TrendyCart</h2>
+      <p>Your one-stop destination for the latest fashion trends.</p>
+    </div>
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section newsletter">
+      <h3>Subscribe</h3>
+      <p>Get updates on new arrivals and exclusive offers.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 TrendyCart. All rights reserved.
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  const navItems = document.querySelectorAll('.nav-link');
+  const current = window.location.pathname.split("/").pop();
+  navItems.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+</body>
+</html>
